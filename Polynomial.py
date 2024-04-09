@@ -9,7 +9,7 @@ class Polynomial:
         return pol[1:] if pol[0] == "+" else pol
 
     def __repr__(self):
-        return "Polynomial" + str(tuple(self.__cfs))
+        return "Polynomial" + str(tuple(self.__cfs)).replace(",)", ")")
 
     def __getitem__(self, i: int):
         return self.__cfs[i]
