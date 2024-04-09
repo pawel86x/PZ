@@ -2,6 +2,11 @@ class Polynomial:
 
     def __init__(self, *cfs):
         self.__cfs = [float(i) for i in cfs]
+        k = len(self.__cfs)-1
+        for i in range(k+1):
+            if self.__cfs[k-i]:
+                self.__cfs = self.__cfs[:k+1-i]
+                break
 
     def __str__(self):
         pol = "".join([self.__cfs_str(self.__cfs[i]) + self.__power_str(self.__cfs[i], i)
