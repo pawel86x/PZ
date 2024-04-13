@@ -11,6 +11,7 @@ class Polynomial:
     def __str__(self):
         pol = "".join([self.__cfs_str(self.__cfs[i]) + self.__power_str(self.__cfs[i], i)
                      for i in range(len(self.__cfs))])
+        pol = "0" if pol == "" else pol
         return pol[1:] if pol[0] == "+" else pol
 
     def __repr__(self):
